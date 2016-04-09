@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Biometrische Identifikationsverfahren</title>
+		<title>Thin- vs Zero-Clients</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -41,76 +41,77 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Biometrische Identifikationsverfahren</h2>
-					<p>
-						<small>Eine Präsentation von Matthias Dröge und Marcel Raddatz</small>
-					</p>
+					<h1>Thin vs Zero Clients</h1>
 				</section>
-
 				<section>
-					<h2>Inhaltsverzeichnis</h2>
-					<ul>
-						<li>Was ist biometrische Identifizierung</li>
-						<li>Welche Arten gibt es?</li>
-						<li>Zwei Beispiele</li>
-						<li>Sicherheit und Datenschutz</li>
-						<li>Zusammenfassung</li>
-					</ul>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
+					<h2>Thin Clients</h2>
 					<section>
-						<h2>Was ist Biometrie?</h2>
-						<p class="fragment">Die Wissenschaft von Messungen an Lebewesen und deren Auswertung</p>
+						<p>Minimale Hardware, Software auf dem Client</p>
 					</section>
 					<section>
-						<h2>Was heißt biometrische Identifizierung</h2>
-						<p class="fragment">Erkennungsverfahren zur Personenidentifikation</p>
-						<p class="fragment">Eines der ersten Systeme zur Identifizierung, das auf auf 11 Körperlängenmaßen basiert, die Bertillonage</p>
+						<p class="fragment">Betriebssystem oft auf dem Client installiert</p>
+						<p class="fragment">Genauso ist weitere Software noch auf dem Client</p>
+						<p class="fragment">Rechenintensive Operationen werden auf den Server ausgelagert</p>
 					</section>
 					<section>
-						<h2>Heutige Bedeutung</h2>
-						<p class="fragment">Automatisierte Personenerkennung durch biologische Charakteristika</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Heutige Möglichkeiten</h2>
+						<h2>Vor- und Nachteile</h2>
 						<p>
+							<h3>Vorteile</h3>
 							<ul>
-								<li class="fragment">DNA</li>
-								<li class="fragment">Fingerabdruck</li>
-								<li class="fragment">Gangstil</li>
-								<li class="fragment">Retina</li>
-								<li class="fragment">Handschrift</li>
-								<li class="fragment">Stimme</li>
-								<li class="fragment">Sprache</li>
-								<li class="fragment">etc ...</li>
+								<li class="fragment">
+									 Eigene Leistung
+								</li>
+							</ul>
+						</p>
+						<p class="fragment">
+							<h3>Nachteile</h3>
+							<ul>
+								<li class="fragment">
+									Betriebssysteme müssen noch lokal gemanaget werden (Updates, etc.)
+								</li>
 							</ul>
 						</p>
 					</section>
-					<section>
-						<img src="http://images.tecchannel.de/images/tecchannel/bdb/376922/890.jpg">
-					</section>
 				</section>
-
+				
 				<section>
+					<h2>Zero Clients</h2>
 					<section>
-						<h2>Beispiel 1: Fingerabdruck</h2>
+						<p>Ähnlich wie Thin Clients, speichern aber keine Daten lokal</p>
+						<p class="fragment">Betriebssystem und Software liegen auf dem Server</p>
 					</section>
 					<section>
-						<h2>Beispiel 2: Retina</h2>
+						<h2>Vor- und Nachteile</h2>
+						<section>
+							<p>
+							<h3>Vorteile</h3>
+							<ul>
+								<li class="fragment">
+									 Betriebssystem kann zentral gemanaget werden
+								</li>
+								<li class="fragment">
+									schnellere Bootzeiten	
+								</li>
+								<li class="fragment">
+									Sicherer
+								</li>
+							</ul>
+						</p>
+						</section>
+						<section>
+							<p class="fragment">
+							<h3>Nachteile</h3>
+							<ul>
+								<li class="fragment">
+									Keine lokalen Speichermöglichkeiten
+								</li>
+								<li class="fragment">
+									Herstellerspezifisches Protokoll (Wechsel wird erschwert)
+								</li>
+							</ul>
+						</p>
+						</section>
 					</section>
-				</section>
-
-				<section>
-					<h2>Sicherheit und Datenschutz</h2>
-				</section>
-
-				<section>
-					<h2>Zusammenfassung</h2>
 				</section>
 
 			</div>
