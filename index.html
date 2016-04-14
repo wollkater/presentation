@@ -1,210 +1,103 @@
-<!doctype html>
-<html lang="en">
+< !doctype html ><html lang="en"><head>
+	<meta charset="utf-8">
 
-	<head>
-		<meta charset="utf-8">
+	<title>Thin- vs Zero-Clients</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<title>Biometrische Identifikationsverfahren</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<meta name="description" content="Eine Präsentation für ITGL">
-		<meta name="author" content="Marcel Raddatz und Matthias Dröge">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
+	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+	<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h2>Biometrische Identifikationsverfahren</h2>
-					<p>
-						<small>Eine Präsentation von Matthias Dröge und Marcel Raddatz</small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Inhaltsverzeichnis</h2>
-					<ul>
-						<li>Was ist biometrische Identifizierung</li>
-						<li>Welche Arten gibt es?</li>
-						<li>Zwei Beispiele</li>
-						<li>Sicherheit und Datenschutz</li>
-						<li>Zusammenfassung</li>
-					</ul>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<h1>Thin vs Zero Clients</h1> 
+			</section>
+			<section>				
+			<h2>Thin Clients</h2>
 					<section>
-						<h2>Was ist Biometrie?</h2>
-						<p class="fragment">Die Wissenschaft von Messungen an Lebewesen und deren Auswertung</p>
+						<p>Minimale Hardware, Software auf dem Client</p>
 					</section>
 					<section>
-						<h2>Was heißt biometrische Identifizierung</h2>
-						<p class="fragment">Erkennungsverfahren zur Personenidentifikation</p>
-						<p class="fragment">Eines der ersten Systeme zur Identifizierung, das auf auf 11 Körperlängenmaßen basiert, die Bertillonage</p>
+						<p class="fragment">Betriebssystem oft auf dem Client installiert</p>
+						<p class="fragment">Genauso ist weitere Software noch auf dem Client</p>
+						<p class="fragment">Rechenintensive Operationen werden auf den Server ausgelagert</p>
 					</section>
 					<section>
-						<h2>Heutige Bedeutung</h2>
-						<p class="fragment">Automatisierte Personenerkennung durch biologische Charakteristika</p>
+						<h3>Vorteile</h3>
+						<ul>
+							<li class="fragment">
+								 Eigene Leistung
+							</li>
+						</ul>
+					</section>
+					<section>
+
+						<h3>Nachteile</h3>
+						<ul>
+							<li class="fragment">
+								Betriebssysteme müssen noch lokal gemanaget werden (Updates, etc.)
+							</li>
+						</ul>
 					</section>
 				</section>
+				
+				<section>
 
-				<section>
+					<h2>Zero Clients</h2>
 					<section>
-						<h2>Heutige Möglichkeiten</h2>
-						<p>
-							<ul>
-								<li class="fragment">DNA</li>
-								<li class="fragment">Fingerabdruck</li>
-								<li class="fragment">Gangstil</li>
-								<li class="fragment">Retina</li>
-								<li class="fragment">Handschrift</li>
-								<li class="fragment">Stimme</li>
-								<li class="fragment">Sprache</li>
-								<li class="fragment">etc ...</li>
-							</ul>
-						</p>
+						<p>Ähnlich wie Thin Clients, speichern aber keine Daten lokal</p>
+						<p class="fragment">Betriebssystem und Software liegen auf dem Server</p>
 					</section>
 					<section>
-						<img src="http://images.tecchannel.de/images/tecchannel/bdb/376922/890.jpg" />
-					</section>
-				</section>
-
-				<section>
-					<h2>Beispiel 1: Fingerabdruck</h2>
-					<section>
-						<h2 class="fragment">Geschichte</h2>
-						<p>
-							<ul>
-								<li class="fragment">China um 246 BCE Abdrücke als Siegelzeichen</li>
-								<li class="fragment">China um 300 erste Grundlage für Diebstahlaufklärungen</li>
-								<li class="fragment">Europa um 1788 Feststellung der Einzigartigkeit</li>
-								<li class="fragment">England 1840 Nutzung von Scotland Yard in Morduntersuchung</li>
-								<li class="fragment">50 Jahre später Routine Verfahren</li>
-								<li class="fragment">Heute das am weitesten verbreitete Biometrische Erkennungsverfahren</li>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<h2>Aussehen</h2>
-						<p>
-							<ul>
-								<li class="fragment">Grundmuster</li>
-								<li class="fragment">grobe Merkmale</li>
-								<ul>
-									<li class="fragment">Schleife (links und rechts)</li>
-									<li class="fragment">Bogen</li>
-									<li class="fragment">Wirbel</li>
-								</ul>
-								<li class="fragment">feine Merkmale</li>
-								<ul>
-									<li class="fragment">Minutien</li>
-									<li class="fragment">Porenstrutur</li>
-								</ul>
-							</ul>
-						</p>
-					</section>
-					<section>
-						<img src="http://www.identityone.net/Images/BiometricTechnology/MinutiaCapture.gif" />
-					</section>
-					<section>
-						<h2>Von Gesetzeswegen</h2>
-						<p>
-							<ul>
-								<li class="fragment">Deutschland</li>
-								<ul>
-									<li class="fragment">Bei Nichterkennbarkeit des Grundmusters => 12 Minutien</li>
-									<li class="fragment">Bei Erkennbarkeit des Grundmusters => 8 Minutien</li>
-								</ul>
-								<li class="fragment">Rest Europas</li>
-								<ul>
-									<li class="fragment">Bei Erkennbarkeit des Grundmusters => 10 und 16 Minutien</li>
-								</ul>
-							</ul>
-						</p>
-					</section>
-					
-				</section>
-				<section>
-						<h2>Beispiel 2: Retina</h2>
+						<h3>Vorteile</h3>
+						<ul>
+							<li class="fragment">
+								 Betriebssystem kann zentral gemanaget werden
+							</li>
+							<li class="fragment">
+								schnellere Bootzeiten	
+							</li>
+							<li class="fragment">
+								Sicherer
+							</li>
+						</ul>
+						</section>
 						<section>
 							<p class="fragment">
-								Erfassung der Blutgefäße im Augenhintergrund. Nicht zu verwechseln mit
-								Iriserkennung(Erfassung der Regenbogenhaut).
-							</p>
-						</section>
-						<section>
-							<h3>Verfahren</h3>
-							<p>
-								Infrarotlicht leuchtet den Augenhintergrund aus und das
-								reflektierte Licht wird von einem Scanner verarbeitet.
-							</p>
-							
-						</section>
-						<section>
-							<h3>Vorteile</h3>
-							<ul>
-								<li class="fragment">Relativ Fälschungssicher</li>
-								<li class="fragment">Geringe Fehlerrate</li>
-								<li class="fragment">Datensatz hat eine geringe Größe</li>
-								<li class="fragment">Retina verändert sich durch Alter oder Krankheit nicht</li>
-							</ul>
-						</section>
-						<section>
 							<h3>Nachteile</h3>
-								<ul>
-									<li class="fragment">Geringe Benutzerakzeptanz, da</li>
-									<li class="fragment">Kopf muss einen bestimmten Abstand zum Scanner haben</li>
-									<li class="fragment">Kopf darf währen des Scannens nicht bewegt werden</li>
-									<li class="fragment">Der Scanner erlaubt keine Brillen</li>
-									<li class="fragment">Hohe Kosten bei der Erfassungsapparatur</li>
-								</ul>
-						</section>
-				</section>
+							<ul>
+								<li class="fragment">
+									Keine lokalen Speichermöglichkeiten
+								</li>
+								<li class="fragment">
+									Herstellerspezifisches Protokoll (Wechsel wird erschwert)
+								</li>
+							</ul>
 
-				<section>
-					<h2>Sicherheit und Datenschutz</h2>
-					<p class="fragment">Biometrischen Daten sind personenbezogene/personenbeziehbare Daten</p>
-					<p class="fragment">Die Erhebung, Speicherung und Verarbeitung ist nur freiwillig oder per Gesetzt möglich</p>
-				</section>
-				<section>
-					<h2>Quellen</h2>
-					<ul>
-						<li><a href="http://www.bfdi.bund.de/DE/Datenschutz/Themen/Technische_Anwendungen/TechnischeAnwendungenArtikel/BiometrieUndDatenschutz.html">Bundesamt für Datenschutz und Informationsfreiheit</a></li>
-						<li><a href="https://www.bsi.bund.de/DE/Themen/DigitaleGesellschaft/Biometrie/AllgemeineEinfuehrung/allgemeineeinfuehrung_node.html">Bundesamt für Sicherheit und Informationstechnik</a></li>
-						<li><a href="https://de.wikipedia.org/wiki/Biometrie">Biometrie - de.wikipedia.org</a></li>
-						<li><a href="https://de.wikipedia.org/wiki/Fingerabdruck">Fingerabdruck - de.wikipedia.org</a></li>
-						<li><a href="https://en.wikipedia.org/wiki/Fingerprint">Fingerprint - en.wikipedia.org</a></li>
-						<li><a href="http://www.strafakte.de/forensik/zuverlaessigkeit-fingerabdruck-beweis-im-strafverfahren/">www.strafakte.de</a></li>
-						<li><a href="http://www.tecchannel.de/sicherheit/identity_access/402320/grundlagen_mehr_sicherheit_mit_biometrie/index9.html">Retinascan - tecchannel.de</a></li>
-					</ul>
-				</section>
 			</div>
 
 		</div>
